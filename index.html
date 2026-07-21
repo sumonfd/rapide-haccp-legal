@@ -25,17 +25,16 @@
 <p>RAPIDE HACCP (« l'application ») est édité par <strong>Md Musfiqul Alam</strong>, développeur individuel (« nous », « notre »). Cette politique explique quelles données sont collectées, comment elles sont utilisées, et vos droits en application du <strong>RGPD (UE 2016/679)</strong> et de la loi française <strong>Informatique et Libertés</strong>.</p>
 
 <h2>1. Données que nous collectons</h2>
-<p>L'application stocke vos données <strong>localement</strong> sur votre appareil iOS et, pour certaines fonctionnalités (capteurs sans fil, IA cloud), peut les transmettre à des services tiers. Aucune donnée n'est envoyée vers nos serveurs.</p>
+<p>L'application stocke vos données sur votre appareil iOS <strong>et</strong> les synchronise avec nos serveurs sécurisés (hébergés par notre prestataire technique Supabase) afin qu'elles restent accessibles depuis tous vos appareils et ne soient jamais perdues. Pour certaines fonctionnalités additionnelles que vous activez (capteurs sans fil, assistant IA cloud), l'application peut aussi transmettre des données à d'autres services tiers.</p>
 
-<h3>1.1 Données stockées localement (sur votre iPhone)</h3>
+<h3>1.1 Compte et données HACCP (stockées localement et synchronisées sur nos serveurs)</h3>
 <ul>
-  <li><strong>Compte utilisateur</strong> : adresse e-mail, nom de l'établissement, secteur d'activité, numéro SIRET, nom du responsable.</li>
-  <li><strong>Mot de passe</strong> : haché avec sel cryptographique (SHA-256), jamais stocké en clair.</li>
-  <li><strong>Données HACCP</strong> : équipements, relevés de température, réceptions, plans de nettoyage, formations, lots de production, étalonnages, actions correctives, etc.</li>
-  <li><strong>Étiquettes &amp; fournisseurs</strong> : noms de produits, dates DLC, allergènes, coordonnées des fournisseurs.</li>
+  <li><strong>Compte utilisateur</strong> : adresse e-mail, mot de passe (haché, jamais en clair), nom de l'établissement, secteur d'activité, numéro SIRET, nom du responsable.</li>
+  <li><strong>Données HACCP de votre établissement</strong> : équipements, relevés de température, réceptions, produits et catégories, plans de nettoyage et réalisations, formations du personnel, membres du personnel, lots de production, étalonnages, actions correctives, contrôles CCP (cuisson/découpe), refroidissement rapide, décongélation, plats témoins, incidents (bris de verre), maintenance, lutte antiparasitaire, inventaire.</li>
+  <li><strong>Étiquettes, fournisseurs &amp; photos</strong> : noms de produits, dates DLC, allergènes, coordonnées des fournisseurs, photos associées aux étiquettes/produits (stockées via Supabase Storage).</li>
   <li><strong>Paramètres</strong> : préférences de langue, type d'entreprise, logo personnalisé.</li>
 </ul>
-<p>Toutes ces données restent sur votre appareil et sont chiffrées par le système de stockage iOS (SwiftData/Core Data + Data Protection).</p>
+<p>Ces données sont chiffrées sur votre appareil par le système de stockage iOS (SwiftData/Core Data + Data Protection), et chiffrées en transit (HTTPS/TLS) et au repos sur nos serveurs. Elles servent uniquement à faire fonctionner l'application (authentification, synchronisation multi-appareils, traçabilité HACCP réglementaire) — jamais à des fins publicitaires ou de revente.</p>
 
 <h3>1.2 Données stockées dans le trousseau iOS (Keychain)</h3>
 <ul>
@@ -55,14 +54,13 @@
 </ul>
 
 <h3>1.4 Données non collectées</h3>
-<p>Nous <strong>ne collectons pas</strong> :</p>
+<p>Nous <strong>ne collectons pas</strong>, et ne revendons ni ne partageons jamais à des fins commerciales ou publicitaires :</p>
 <ul>
-  <li>Vos données HACCP, recettes, ou informations clients à des fins commerciales</li>
   <li>Votre position GPS</li>
   <li>Vos contacts</li>
   <li>Vos photos en dehors de celles que vous choisissez d'importer pour OCR/étiquette</li>
   <li>Vos identifiants publicitaires (IDFA)</li>
-  <li>Aucun cookie, aucun traceur</li>
+  <li>Aucun cookie, aucun traceur publicitaire</li>
 </ul>
 
 <h2>2. Pourquoi nous utilisons ces données</h2>
@@ -93,7 +91,8 @@
 
 <h2>5. Partage et transferts</h2>
 <p>Nous <strong>ne vendons jamais</strong> vos données. Aucune donnée n'est partagée avec des annonceurs ou des courtiers de données.</p>
-<p>Les services tiers que vous activez explicitement (MOCREO, DeepSeek, OpenAI, Anthropic, Google Gemini) reçoivent uniquement les données nécessaires à leur fonctionnement. Consultez leurs politiques de confidentialité respectives :</p>
+<p><strong>Hébergement (sous-traitant RGPD) :</strong> vos données de compte et vos données HACCP sont hébergées par <strong>Supabase Inc.</strong>, notre prestataire d'hébergement cloud, qui agit en tant que sous-traitant au sens de l'article 28 du RGPD et n'utilise vos données à aucune autre fin que d'assurer le fonctionnement et la synchronisation de l'application. Politique de confidentialité : <a href="https://supabase.com/privacy">supabase.com/privacy</a>.</p>
+<p>Les services tiers optionnels que vous activez explicitement (MOCREO, DeepSeek, OpenAI, Anthropic, Google Gemini) reçoivent uniquement les données nécessaires à leur fonctionnement. Consultez leurs politiques de confidentialité respectives :</p>
 <ul>
   <li>MOCREO : <a href="https://www.mocreo.com/privacy">mocreo.com/privacy</a></li>
   <li>DeepSeek : <a href="https://platform.deepseek.com/privacy">platform.deepseek.com/privacy</a></li>
@@ -119,7 +118,7 @@
   <li>Clés API stockées dans le trousseau iOS chiffré</li>
   <li>Base de données locale protégée par le chiffrement iOS Data Protection</li>
   <li>Communications réseau en HTTPS uniquement (TLS 1.2+)</li>
-  <li>Aucun serveur cloud sous notre contrôle qui stocke vos données</li>
+  <li>Données hébergées et chiffrées au repos chez notre prestataire Supabase, avec accès restreint</li>
 </ul>
 
 <h2>8. Enfants</h2>
